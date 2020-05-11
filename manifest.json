@@ -1,0 +1,15 @@
+{
+    "name": "MapViewer.gabriele",
+    "description": "A short description of your app",
+    "architecture": "@CLICK_ARCH@",
+    "title": "MapViewer",
+    "hooks": {
+        "MyQML": {
+            "apparmor": "mapviewer.apparmor",
+            "desktop":  "mapviewer.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "gabriele <gabriele@gmail.com>",
+    "framework" : "ubuntu-sdk-16.04"
+}

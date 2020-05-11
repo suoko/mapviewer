@@ -1,0 +1,6 @@
+{
+  "clickable_minimum_required": "6.12.2",
+  "builder": "qmake",
+  "kill": "mapviewer",
+  "build_args": "CONFIG+=UBUNTU_TOUCH"
+}
