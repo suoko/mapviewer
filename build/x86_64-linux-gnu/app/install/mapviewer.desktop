@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=mapviewer
+Icon=logo.svg
+Name=mapviewer.desktop
+Terminal=false
+Type=Application
+X-Deepin-Vendor=user-custom
+X-Ubuntu-Touch=true
+_Name=mapviewer

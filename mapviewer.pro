@@ -1,4 +1,4 @@
-TARGET = qml_location_mapviewer
+TARGET = mapviewer
 TEMPLATE = app
 
 QT += qml network quick positioning location
@@ -6,8 +6,8 @@ SOURCES += main.cpp
 
 # Workaround for QTBUG-38735
 QT_FOR_CONFIG += location-private
-qtConfig(geoservices_mapboxgl): QT += sql
-qtConfig(geoservices_osm): QT += concurrent
+#qtConfig(geoservices_mapboxgl): QT += sql
+#qtConfig(geoservices_osm): QT += concurrent
 
 RESOURCES += \
     mapviewer.qrc
@@ -47,6 +47,10 @@ OTHER_FILES +=mapviewer.qml \
     forms/RouteListDelegate.qml \
     forms/RouteListHeader.qml
 
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
 UBUNTU_TOUCH {
     message("building for Ubuntu Touch")
     target.path = /
@@ -65,11 +69,11 @@ UBUNTU_TOUCH {
     click_files.files = manifest.json mapviewer.apparmor mapviewer.desktop
 
     logo.path = /assets
-    logo.files = $$PWD/assets/mapviewer.png
+    logo.files = $$PWD/logo.svg
 
     INSTALLS+=click_files logo
 }
 
 
-target.path = $$[QT_INSTALL_EXAMPLES]/location/mapviewer
+target.path = $$PWD/
 INSTALLS += target
